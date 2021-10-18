@@ -246,14 +246,14 @@ class Ui_MainWindow(object):
         self.btcToCn.clicked.connect(MainWindow.click_changetocn)
         self.btnEnToCn.clicked.connect(MainWindow.click_entocn)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MarkDown\u6807\u9898\u751f\u6210\u5668", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u5e38\u7528\u5de5\u5177\u96c6", None))
         self.btnSelFile.setText(QCoreApplication.translate("MainWindow", u"\u9009\u62e9\u6587\u4ef6", None))
         self.txtSoure.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u8bf7\u8f93\u5165\u9700\u8981\u8f6c\u6362\u7684markdown\u5185\u5bb9\uff0c\u6216\u70b9\u51fb\u4e0a\u9762\u52a0\u8f7d\u6587\u4ef6", None))
         self.txtRz.setDocumentTitle("")

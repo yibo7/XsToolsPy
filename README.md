@@ -1,5 +1,6 @@
 # MdTocPy
-带有可视化界面的markdown toc生成器
+基于python写的
+带有可视化界面的常用工具集
 ### 安装与运动
 - 1.确保电脑上已经安装pipenv
     如果还没有安装，请先安装:
@@ -28,4 +29,4 @@
   pyinstaller -D -w -i ui/logo.ico main.py
   ```
 - 5.查看结果
-![img.png](img.png)
+  ![img_1.png](img_1.png)
