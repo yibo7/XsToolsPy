@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>855</width>
+    <height>645</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MarkDown标题生成器</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>生成MarkDown标题</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QLineEdit" name="txtFilePath"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnSelFile">
+                <property name="text">
+                 <string>选择文件</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="txtSoure">
+              <property name="acceptRichText">
+               <bool>false</bool>
+              </property>
+              <property name="placeholderText">
+               <string>请输入需要转换的markdown内容，或点击上面加载文件</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="txtRz">
+            <property name="documentTitle">
+             <string/>
+            </property>
+            <property name="placeholderText">
+             <string>点击生成后将输出结果在这里</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="btnClear">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>清空所有</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnMake">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>开始生成</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnCopy">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>复制结果</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>谷歌翻译</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QTextEdit" name="txtLangSoure">
+            <property name="acceptRichText">
+             <bool>false</bool>
+            </property>
+            <property name="placeholderText">
+             <string>请输入要翻译的内容</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QPushButton" name="btcToCn">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>130</width>
+                <height>35</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>其他语言翻译成中文</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnEnToCn">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>130</width>
+                <height>35</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>其他语言翻译成英文</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="txtLangRz">
+            <property name="documentTitle">
+             <string/>
+            </property>
+            <property name="placeholderText">
+             <string>翻译结果</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tbCreactQr">
+       <property name="toolTip">
+        <string>生成二维码</string>
+       </property>
+       <attribute name="title">
+        <string>生成二维码</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>请输入要生成的二维码内容，然后点击生成二维码</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnMakeQr">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>生成二维码</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="txtQrContent">
+              <property name="acceptRichText">
+               <bool>false</bool>
+              </property>
+              <property name="placeholderText">
+               <string>请输入需要转换的markdown内容，或点击上面加载文件</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>150</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>二维生成结果</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
+            </property>
+            <widget class="QWidget" name="layoutWidget">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>12</y>
+               <width>281</width>
+               <height>301</height>
+              </rect>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <widget class="QLabel" name="lbQrcode">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>300</width>
+                  <height>300</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>二维码</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnClearQr">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>清空数据</string>
+                </property>
+                <property name="checkable">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>855</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnMake</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>make_toc()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>462</x>
+     <y>621</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>555</x>
+     <y>558</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnSelFile</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>sel_file()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>408</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>555</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnClear</sender>
+   <signal>clicked()</signal>
+   <receiver>txtSoure</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>621</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>239</x>
+     <y>485</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnClear</sender>
+   <signal>clicked()</signal>
+   <receiver>txtRz</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>621</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>526</x>
+     <y>538</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCopy</sender>
+   <signal>clicked()</signal>
+   <receiver>txtRz</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>688</x>
+     <y>621</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>805</x>
+     <y>556</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCopy</sender>
+   <signal>clicked()</signal>
+   <receiver>txtRz</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>688</x>
+     <y>621</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>805</x>
+     <y>556</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnMakeQr</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>make_qrcode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>506</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>735</x>
+     <y>622</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnClearQr</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>click_clear_qr()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>585</x>
+     <y>232</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>656</x>
+     <y>-22</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btcToCn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>click_changetocn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>418</x>
+     <y>240</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>418</x>
+     <y>-29</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnEnToCn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>click_entocn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>438</x>
+     <y>441</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>462</x>
+     <y>-23</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>make_toc()</slot>
+  <slot>sel_file()</slot>
+  <slot>make_qrcode()</slot>
+  <slot>click_clear_qr()</slot>
+  <slot>click_changetocn()</slot>
+  <slot>click_entocn()</slot>
+ </slots>
+</ui>
