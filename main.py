@@ -13,7 +13,8 @@ from googletrans import Translator
 from git_toc import detectHeadLines
 from ui.ui_index import Ui_MainWindow
 
-# jieba.enable_paddle()
+jieba.set_dictionary("jieba\dict.txt")
+jieba.initialize()
 class IndexWindow(QMainWindow):
 
     def __init__(self):
@@ -115,7 +116,7 @@ class IndexWindow(QMainWindow):
         # seg_list = jieba.cut(txt, cut_all=True)
         # self.ui.txtWWords.setText("|".join(seg_list))
 
-        words = jieba.lcut(txt)  # 使用精确模式对文本进行分词
+        words = jieba.cut(txt)  # 使用精确模式对文本进行分词
         counts = {}  # 通过键值对的形式存储词语及其出现的次数
 
         for word in words:
@@ -134,9 +135,9 @@ class IndexWindow(QMainWindow):
 
 
 if __name__ == '__main__':
+
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon('ui/logo.ico'))
     indexWin = IndexWindow()
     indexWin.show()
-
     sys.exit(app.exec())
