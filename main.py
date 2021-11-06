@@ -1,6 +1,7 @@
 import io
 import traceback
 
+import jieba
 import qrcode
 from PySide6 import QtGui
 from PySide6.QtGui import QIcon
@@ -12,7 +13,7 @@ from googletrans import Translator
 from git_toc import detectHeadLines
 from ui.ui_index import Ui_MainWindow
 
-
+# jieba.enable_paddle()
 class IndexWindow(QMainWindow):
 
     def __init__(self):
@@ -107,6 +108,29 @@ class IndexWindow(QMainWindow):
         except Exception as e:
             print(repr(e))
             print(traceback.print_exc())
+
+    def click_word_spilt(self):
+
+        txt = self.ui.txtWordContent.toPlainText()
+        # seg_list = jieba.cut(txt, cut_all=True)
+        # self.ui.txtWWords.setText("|".join(seg_list))
+
+        words = jieba.lcut(txt)  # 使用精确模式对文本进行分词
+        counts = {}  # 通过键值对的形式存储词语及其出现的次数
+
+        for word in words:
+            if len(word) == 1:  # 单个词语不计算在内
+                continue
+            else:
+                counts[word] = counts.get(word, 0) + 1  # 遍历所有词语，每出现一次其对应的值加 1
+
+        items = list(counts.items())  # 将键值对转换成列表
+        items.sort(key=lambda x: x[1], reverse=True)  # 根据词语出现的次数进行从大到小排序
+
+        for item in items:
+            word, count = item
+            self.ui.txtWWords.append("{0:<5}{1:>5}".format(word, count))
+            # print("{0:<5}{1:>5}".format(word, count))
 
 
 if __name__ == '__main__':

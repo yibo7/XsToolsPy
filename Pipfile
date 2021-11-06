@@ -9,6 +9,8 @@ pyinstaller = "*"
 qrcode = "*"
 pillow = "*"
 googletrans = "==4.0.0-rc1"
+xscorepy = "*"
+jieba = "*"
 
 [dev-packages]
 

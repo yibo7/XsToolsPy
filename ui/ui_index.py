@@ -225,6 +225,62 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.addLayout(self.horizontalLayout_5)
 
         self.tabWidget.addTab(self.tbCreactQr, "")
+        self.tab_3 = QWidget()
+        self.tab_3.setObjectName(u"tab_3")
+        self.gridLayout = QGridLayout(self.tab_3)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.horizontalLayout_8 = QHBoxLayout()
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.verticalLayout_8 = QVBoxLayout()
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.horizontalLayout_9 = QHBoxLayout()
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.label_3 = QLabel(self.tab_3)
+        self.label_3.setObjectName(u"label_3")
+
+        self.horizontalLayout_9.addWidget(self.label_3)
+
+        self.btnSpiltWord = QPushButton(self.tab_3)
+        self.btnSpiltWord.setObjectName(u"btnSpiltWord")
+        sizePolicy.setHeightForWidth(self.btnSpiltWord.sizePolicy().hasHeightForWidth())
+        self.btnSpiltWord.setSizePolicy(sizePolicy)
+
+        self.horizontalLayout_9.addWidget(self.btnSpiltWord)
+
+
+        self.verticalLayout_8.addLayout(self.horizontalLayout_9)
+
+        self.txtWordContent = QTextEdit(self.tab_3)
+        self.txtWordContent.setObjectName(u"txtWordContent")
+        self.txtWordContent.setAcceptRichText(False)
+
+        self.verticalLayout_8.addWidget(self.txtWordContent)
+
+
+        self.horizontalLayout_8.addLayout(self.verticalLayout_8)
+
+        self.groupBox_2 = QGroupBox(self.tab_3)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        sizePolicy2.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
+        self.groupBox_2.setSizePolicy(sizePolicy2)
+        self.groupBox_2.setMinimumSize(QSize(300, 150))
+        self.groupBox_2.setAlignment(Qt.AlignCenter)
+        self.groupBox_2.setFlat(False)
+        self.groupBox_2.setCheckable(False)
+        self.verticalLayout_9 = QVBoxLayout(self.groupBox_2)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.txtWWords = QTextEdit(self.groupBox_2)
+        self.txtWWords.setObjectName(u"txtWWords")
+
+        self.verticalLayout_9.addWidget(self.txtWWords)
+
+
+        self.horizontalLayout_8.addWidget(self.groupBox_2)
+
+
+        self.gridLayout.addLayout(self.horizontalLayout_8, 0, 0, 1, 1)
+
+        self.tabWidget.addTab(self.tab_3, "")
 
         self.verticalLayout_2.addWidget(self.tabWidget)
 
@@ -245,8 +301,9 @@ class Ui_MainWindow(object):
         self.btnClearQr.clicked.connect(MainWindow.click_clear_qr)
         self.btcToCn.clicked.connect(MainWindow.click_changetocn)
         self.btnEnToCn.clicked.connect(MainWindow.click_entocn)
+        self.btnSpiltWord.clicked.connect(MainWindow.click_word_spilt)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -279,5 +336,12 @@ class Ui_MainWindow(object):
         self.btnClearQr.setText(QCoreApplication.translate("MainWindow", u"\u6e05\u7a7a\u6570\u636e", None))
         self.label_2.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tbCreactQr), QCoreApplication.translate("MainWindow", u"\u751f\u6210\u4e8c\u7ef4\u7801", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u5c06\u8981\u5206\u8bcd\u7684\u5185\u5bb9\u8f93\u8fdb\u6765", None))
+        self.btnSpiltWord.setText(QCoreApplication.translate("MainWindow", u"\u5f00\u59cb\u5206\u8bcd", None))
+        self.txtWordContent.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u5185\u5bb9", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"\u751f\u6210\u7ed3\u679c", None))
+        self.txtWWords.setDocumentTitle("")
+        self.txtWWords.setPlaceholderText("")
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"\u5206\u8bcd", None))
     # retranslateUi
 
